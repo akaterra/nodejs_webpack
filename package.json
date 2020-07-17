@@ -1,0 +1,29 @@
+{
+  "name": "nodejs_webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:prod": "npm run clean:dist && npm run resources && npx webpack --mode production && cp -r node_modules/@atriory/common/node_modules/bignum/build dist/ && npx uglifyjs dist/app.js -o dist/app.js && npx bytenode -c dist/app.js && rm -rf dist/app.js dist/app.js.map dist/node-shared dist/wallet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@akaterra:akaterra/nodejs_webpack.git"
+  },
+  "dependencies": {
+    "@babel/core": "7.9.0",
+    "@babel/preset-env": "7.9.0",
+    "moment": "2.24.0",
+    "source-map-support": "0.5.16",
+    "ts-loader": "6.2.1"
+  },
+  "devDependencies": {
+    "@types/source-map-support": "^0.5.1",
+    "raw-loader": "4.0.0",
+    "webpack": "4.42.0",
+    "webpack-cli": "3.3.11",
+    "webpack-node-externals": "1.7.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
